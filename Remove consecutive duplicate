@@ -1,0 +1,21 @@
+#include<stdio.h>
+int remove_duplicate(int a[],int n){
+    int j=0;
+    for(int i=0;i<n;i++){
+        if(a[i]!=a[j]){
+            j++;
+            a[j]=a[i];
+        }
+    }
+    return j+1;
+}
+int main(){
+    int a[]={4,4,4,4,5,5,3};
+    int n=sizeof(a)/sizeof(a[0]);
+    //remove_duplicate(a,n);
+    int s = remove_duplicate(a, n); // Store the number of unique elements in n
+    printf("Modified array:\n");
+    for (int i = 0; i < s; i++) {
+    printf("%d\n", a[i]); // Print the modified array
+}
+}
